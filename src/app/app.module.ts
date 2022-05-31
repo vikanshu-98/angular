@@ -6,7 +6,7 @@ import { LoginComponent } from './login/login.component';
 import { UserListComponent } from './user-list/user-list.component';
 import { InlineCssComponent } from './inline-css/inline-css.component';
 import { InlineComponentComponent } from './inline-component/inline-component.component';
-
+import { UserAuthModule } from './user-auth/user-auth.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,7 +16,8 @@ import { InlineComponentComponent } from './inline-component/inline-component.co
     InlineComponentComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    UserAuthModule
   ],
   providers: [],
   bootstrap: [AppComponent]

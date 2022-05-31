@@ -8,8 +8,14 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'Viknashu chahu';
   value=2;
-
+  count = 0;
   getValue(){
     return "function chauhsn";
   }
+  getCount(caount:number){
+    this.count +=  caount;
+    console.log(this.count);
+  }
+   
+  
 }
