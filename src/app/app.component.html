@@ -7,21 +7,71 @@
 {{ title=="Viknashu chahu" }}
 {{ value }}
 
-<app-user-list></app-user-list>
-<app-user-list></app-user-list>
-<app-user-list></app-user-list>
-<app-user-list></app-user-list>
-<app-user-list></app-user-list>
-<app-inline-css></app-inline-css>
-<app-inline-component></app-inline-component>
-<app-user-login></app-user-login>
+ 
 
 <button  (click)="getCount(1)">click me</button>
-input value is {{ inputValue }}
+<h1 *ngStyle="{color:'red'}">value is {{ inputValue }}</h1> 
 <br>
 <input type="text" name="name" #name (blur)="blurFunction(name.value)" placeholder="enter the name" /><br>
 <input type="text" name="name" #name1 (keypress)="blurFunction(name1.value)" placeholder="enter the name" /><br>
 <input type="text" name="name" #name2 (keyup)="blurFunction(name2.value)" placeholder="enter the name" /><br>
 <input type="text" name="name" #name4 (input)="blurFunction(name4.value)" placeholder="enter the name" /><br>
 
+<br><br> 
+    <input type="text" name="name" placeholder="interpolation" value={{title}} disabled={{disable}}/>
+ 
+<br><br>  
+<input type="text" name="name" placeholder="property binding" [value]=title [disabled]=disable/>
+<br><br>
 <button (click)="blurFunction(name4.value)">get Value</button>
+
+
+<div *ngIf="disable then ifBLock else elseBlock">
+    
+</div>
+<ng-template #ifBLock>
+    <h1>This is the if conditiion</h1>
+</ng-template>
+<ng-template #elseBlock>
+    <h1>This is else condition</h1>
+</ng-template>
+
+<ng-template [ngIf]="color==='yellow'">
+    <h1 style="color:yellow">yellow</h1>
+</ng-template>
+
+
+<!-- multiple else if -->
+<ng-template [ngIf]="color ==='green'">
+    <h1 style="color:green">greeen</h1>
+</ng-template>
+
+<ng-template [ngIf]="color=='red'">
+    <h1 style="color:red">red</h1>
+</ng-template>
+
+
+<!-- switch case -->
+
+<h1>using switch</h1>
+<div [ngSwitch]="color">
+    <h1 style="color:red" *ngSwitchCase="'red'">red</h1>
+    <h1 style="color:green" *ngSwitchCase="'green'">red</h1>
+    <h1 style="color:blue" *ngSwitchCase="'blue'">red</h1> 
+    <h1 style="color:blue" *ngSwitchDefault>jajjajaj</h1> 
+</div>
+
+<!-- 
+for loop -->
+
+<ul *ngFor="let name of student">
+    <li>{{ name.name }}</li>
+    <li>{{ name.course }}</li> 
+    <ul *ngFor="let addres of name.address">
+        <li>{{ addres.pincode }}</li>
+        <li>{{ addres.post }}</li>
+    </ul>
+</ul>
+
+
+ 
