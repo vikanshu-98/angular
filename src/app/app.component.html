@@ -8,6 +8,9 @@
 {{ value }}
 
  
+ 
+
+ 
 
 <button  (click)="getCount(1)">click me</button>
 <h1 *ngStyle="{color:'red'}">value is {{ inputValue }}</h1> 
@@ -43,11 +46,11 @@
 
 <!-- multiple else if -->
 <ng-template [ngIf]="color ==='green'">
-    <h1 style="color:green">greeen</h1>
+    <h1  [style.color]="color">greeen</h1>
 </ng-template>
 
 <ng-template [ngIf]="color=='red'">
-    <h1 style="color:red">red</h1>
+    <h1  [style.color]="color">red</h1>
 </ng-template>
 
 
@@ -73,5 +76,21 @@ for loop -->
     </ul>
 </ul>
 
+
+
+ 
+<!-- form -->
+<form #signupForm="ngForm" (submit)="formSubmitData(signupForm.value)">
+    <input type="text" ngModel   name="userName" placeholder="enter your name" /><br><br>
+    <input type="email" ngModel  name="userEmail" placeholder="enter your Email" /><br><br>
+    <input type="password"   ngModel name="userPassword" placeholder="enter your password" /><br><br>
+    <button>form submit</button>
+</form>
+
+
+<!-- toggle -->
+<button (click)="toggleButton()">toggle</button>
+<br>
+<h1 *ngIf="toggle">This is toggle button</h1>
 
  

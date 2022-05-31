@@ -7,17 +7,21 @@ import { UserListComponent } from './user-list/user-list.component';
 import { InlineCssComponent } from './inline-css/inline-css.component';
 import { InlineComponentComponent } from './inline-component/inline-component.component';
 import { UserAuthModule } from './user-auth/user-auth.module';
+import { FormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     UserListComponent,
     InlineCssComponent,
-    InlineComponentComponent
+    InlineComponentComponent,
   ],
   imports: [
     BrowserModule,
-    UserAuthModule
+    UserAuthModule,
+    FormsModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

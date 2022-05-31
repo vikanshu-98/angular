@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -11,7 +12,8 @@ export class AppComponent {
   inputValue:any;
   count = 0;
   disable =true
-  color="voilet"
+  color="red"
+  toggle=true;
   student = [
     {name:"vikanshu",course:"b.tech",address:[{post:"uk",pincode:"25033"}]},
     {name:"ramesh",course:"b.tech",address:[{post:"us",pincode:"25033"}]},
@@ -33,5 +35,12 @@ export class AppComponent {
     
   }
    
+  formSubmitData(data:NgForm){
+    console.log(data);
+    
+  }
+  toggleButton(){
+    this.toggle = !this.toggle
+  }
   
 }
