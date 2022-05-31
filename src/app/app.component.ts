@@ -8,6 +8,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'Viknashu chahu';
   value=2;
+  inputValue:any;
   count = 0;
   getValue(){
     return "function chauhsn";
@@ -15,6 +16,12 @@ export class AppComponent {
   getCount(caount:number){
     this.count +=  caount;
     console.log(this.count);
+  }
+
+  blurFunction(name:any){
+    this.inputValue = name
+    console.log(name);
+    
   }
    
   

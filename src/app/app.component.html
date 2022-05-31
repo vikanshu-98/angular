@@ -17,3 +17,11 @@
 <app-user-login></app-user-login>
 
 <button  (click)="getCount(1)">click me</button>
+input value is {{ inputValue }}
+<br>
+<input type="text" name="name" #name (blur)="blurFunction(name.value)" placeholder="enter the name" /><br>
+<input type="text" name="name" #name1 (keypress)="blurFunction(name1.value)" placeholder="enter the name" /><br>
+<input type="text" name="name" #name2 (keyup)="blurFunction(name2.value)" placeholder="enter the name" /><br>
+<input type="text" name="name" #name4 (input)="blurFunction(name4.value)" placeholder="enter the name" /><br>
+
+<button (click)="blurFunction(name4.value)">get Value</button>
